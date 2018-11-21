@@ -13,23 +13,55 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/iv_demo"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1">
 
-        <Button
-            android:id="@+id/to_take_pic"
-            android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center">
+
+                <VideoView
+                    android:id="@+id/vv_demo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_demo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="拍照测试" />
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/to_take_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="拍照测试" />
+
+            <Button
+                android:id="@+id/to_take_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="录像测试" />
+        </LinearLayout>
 
         <TextView
-            android:layout_marginTop="5dp"
             android:id="@+id/tv_notice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:text=" "
             android:textColor="#ff0000" />
 
@@ -54,10 +86,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
             android:paddingLeft="50dp"
             android:paddingRight="50dp"
             android:paddingTop="20dp"
-            android:paddingBottom="20dp"
             android:text="@string/applicable_scene" />
 
     </LinearLayout>
