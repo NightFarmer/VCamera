@@ -11,6 +11,8 @@ import android.provider.MediaStore
 import android.support.v4.content.FileProvider
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,6 +22,27 @@ import java.io.File
 class MainActivity : AppCompatActivity() {
 
     private var mUri: Uri? = null
+
+    private var menuPay: MenuItem? = null
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        return super.onCreateOptionsMenu(menu)
+        menuInflater.inflate(R.menu.main, menu)
+        menuPay = menu?.findItem(R.id.mn_pay)
+
+        val sharedPreferences = getSharedPreferences("db", Context.MODE_PRIVATE)
+        val hideIcon = sharedPreferences.getBoolean("hideIcon", false)
+        menuPay?.isVisible = !hideIcon
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == R.id.mn_pay) {
+            startActivity(Intent(this, PayActivity::class.java))
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,6 +101,10 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         checkDefaultApp()
+
+        val sharedPreferences = getSharedPreferences("db", Context.MODE_PRIVATE)
+        val hideIcon = sharedPreferences.getBoolean("hideIcon", false)
+        menuPay?.isVisible = !hideIcon
     }
 
     private fun checkDefaultApp() {
