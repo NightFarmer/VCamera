@@ -81,13 +81,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkDefaultApp() {
+        tv_notice.text = ""
+        tv_notice.visibility = View.GONE
         val openCameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE) //系统常量， 启动相机的关键
         if (hasPreferredApplication(this, openCameraIntent)) {
-            to_take_pic.text = "重置默认应用"
-            tv_notice.text = "相机已设置默认应用，重置默认应用后才会弹出相机选择项"
+            to_take_pic.setText(R.string.to_reset_default_app)
+            tv_notice.setText(R.string.default_app_notice)
+            tv_notice.visibility = View.VISIBLE
         } else {
-            to_take_pic.text = "测试拍照"
-            tv_notice.text = " "
+            to_take_pic.setText(R.string.image_capture_test)
+        }
+        val openCameraIntent2 = Intent(MediaStore.ACTION_VIDEO_CAPTURE) //系统常量， 启动相机的关键
+        if (hasPreferredApplication(this, openCameraIntent2)) {
+            to_take_video.setText(R.string.to_reset_default_app)
+            tv_notice.setText(R.string.default_app_notice)
+            tv_notice.visibility = View.VISIBLE
+        } else {
+            to_take_video.setText(R.string.video_capture_test)
         }
     }
 
@@ -102,7 +112,8 @@ class MainActivity : AppCompatActivity() {
         val pm = context.packageManager
         val info = pm.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY)
         Log.e("xxx", info.activityInfo.packageName)
-        return "android" != info.activityInfo.packageName && "top.nightfarmer.vcamera" != info.activityInfo.packageName
+//        return "android" != info.activityInfo.packageName && "top.nightfarmer.vcamera" != info.activityInfo.packageName
+        return "android" != info.activityInfo.packageName
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -3,4 +3,14 @@
     <string name="how_to_use">How to use: When other applications call the system camera to take photos, you can use this camera to select pictures directly from the album.</string>
     <string name="notice">Note: This app simulates the camera app and does not have hook camera data, so it cannot replace the internal camera of the app, such as WeChat.</string>
     <string name="applicable_scene">Applicable scene: \n1. Other applications only provide photos (system camera) and do not provide a selection of pictures; \n2. When the camera is broken and other applications need to provide pictures; \n3. When the simulator does not provide camera function; \n4. etc.</string>
+    <string name="image_capture_test">image test</string>
+    <string name="video_capture_test">video test</string>
+    <string name="to_click_test_button">click test button</string>
+    <string name="to_choose_file">to choose file</string>
+    <string name="to_reset_default_app">reset_default_app</string>
+    <string name="default_app_notice">The camera has set the default app, and the camera selection will pop up after resetting the default app.</string>
+    <string name="permission_fail_notice">The permission acquisition failed, and the permission is released before it can be used normally.</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="permission_request">File access is not turned on, do you want to open it?</string>
 </resources>

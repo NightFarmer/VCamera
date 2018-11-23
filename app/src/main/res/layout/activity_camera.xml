@@ -6,15 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".CameraActivity">
 
-    <LinearLayout
+
+    <Button
+        android:id="@+id/to_choose_pic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
-
-        <Button
-            android:id="@+id/to_choose_pic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="调用相册选择图片" />
-    </LinearLayout>
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_selector"
+        android:elevation="8dip"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/to_choose_file"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
 </RelativeLayout>

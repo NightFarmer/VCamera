@@ -4,4 +4,13 @@
     <string name="how_to_use">使用方法：在其他应用调用系统相机拍照时，可以选用本相机直接从相册选择图片。</string>
     <string name="notice">注意：本应用模拟的是相机APP，并没有hook摄像头数据，所以不能替换应用内部相机，比如微信。</string>
     <string name="applicable_scene">适用场景：\n1.其他应用只提供了拍照(系统相机)并没有提供选择图片时； \n2.摄像头坏掉了而其他应用又需要提供图片时； \n3.模拟器不提供拍照功能时； \n4.等。</string>
+    <string name="image_capture_test">拍照测试</string>
+    <string name="video_capture_test">录像测试</string>
+    <string name="to_click_test_button">请点击测试按钮</string>
+    <string name="to_choose_file">调用相册选择文件</string>
+    <string name="to_reset_default_app">重置默认应用</string>
+    <string name="default_app_notice">相机已设置默认应用，重置默认应用后才会弹出相机选择项。</string>
+    <string name="permission_fail_notice">权限获取失败，放开权限后才能正常使用</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
 </resources>

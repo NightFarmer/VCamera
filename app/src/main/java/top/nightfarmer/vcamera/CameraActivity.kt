@@ -16,7 +16,7 @@ import java.io.IOException
 
 class CameraActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
     override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {
-        Toast.makeText(this, "权限获取失败，放开权限后才能正常使用", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.permission_fail_notice), Toast.LENGTH_SHORT).show()
     }
 
     override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>) {
@@ -35,17 +35,17 @@ class CameraActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks 
             choosePic()
         }
         choosePic()
-        if (intent.action == MediaStore.ACTION_VIDEO_CAPTURE) {
-            to_choose_pic.text = "选择本地视频文件"
-        }
+//        if (intent.action == MediaStore.ACTION_VIDEO_CAPTURE) {
+//            to_choose_pic.text = "选择本地视频文件"
+//        }
     }
 
     private fun choosePic() {
         EasyPermissions.requestPermissions(
                 PermissionRequest.Builder(this, 111, Manifest.permission.READ_EXTERNAL_STORAGE)
-                        .setRationale("文件访问权限未开启，是否尝试打开？")
-                        .setPositiveButtonText("确定")
-                        .setNegativeButtonText("取消")
+                        .setRationale(getString(R.string.permission_request))
+                        .setPositiveButtonText(getString(R.string.ok))
+                        .setNegativeButtonText(getString(R.string.cancel))
 //                    .setTheme(R.style.my_fancy_style)
                         .build())
     }
