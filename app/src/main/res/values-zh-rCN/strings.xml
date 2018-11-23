@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">虚拟相机</string>
-    <string name="how_to_use">使用方法：在其他应用调用系统相机拍照时，可以选用本相机直接从相册选择图片。</string>
+    <string name="how_to_use">使用方法：在其他应用调用系统相机拍照/录像时，可以选用本相机直接从相册选择图片或视频。</string>
     <string name="notice">注意：本应用模拟的是相机APP，并没有hook摄像头数据，所以不能替换应用内部相机，比如微信。</string>
-    <string name="applicable_scene">适用场景：\n1.其他应用只提供了拍照(系统相机)并没有提供选择图片时； \n2.摄像头坏掉了而其他应用又需要提供图片时； \n3.模拟器不提供拍照功能时； \n4.等。</string>
+    <string name="applicable_scene">适用场景：\n1.某应用只提供了拍照/录像(系统相机)并没有提供选择图片/视频时； \n2.摄像头坏掉了而其他应用又需要提供图片/视频时； \n3.模拟器不提供拍照/录像功能时； \n4.等。</string>
     <string name="image_capture_test">拍照测试</string>
     <string name="video_capture_test">录像测试</string>
     <string name="to_click_test_button">请点击测试按钮</string>
